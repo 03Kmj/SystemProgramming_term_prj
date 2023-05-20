@@ -12,7 +12,7 @@
 
 [Team10 project proposal (1).pdf](%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%83%E1%85%A9%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A1%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%20a41a674091ea429e83dd716858bf944b/Team10_project_proposal_(1).pdf)
 
-- Out GitHub🐈‍⬛
+- Our GitHub🐈‍⬛
 
 [GitHub - 03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj/tree/main)
 
