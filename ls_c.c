@@ -8,7 +8,7 @@
 int main() {
     char *grep = "grep";
     char *ls = "ls";
-    char *c = ".c";
+    char *c = "\\.c$";
 
     int pid;
     int thepipe[2];
