@@ -33,8 +33,15 @@ void intro();
 // print similarity with colors
 void print_similarity();
 
+// signal handler
+void sigint_handler(int signum);
+void sigquit_handler(int signum);
+
 // main
 int main(int argc, char *argv[]) {
+    signal(SIGINT, sigint_handler);
+    signal(SIGQUIT, sigquit_handler);
+
     char main_dir[100];
     char sub_dir[100];
     
@@ -69,7 +76,7 @@ int main(int argc, char *argv[]) {
         else {
             strcpy(sub_dir, buf);
 
-            char command[200];
+            char command[512];
             sprintf(command, "python3 ./similarity.py %s %s", main_dir, sub_dir);
 
             FILE *fp = popen(command, "r");
@@ -95,6 +102,18 @@ int main(int argc, char *argv[]) {
     print_similarity();
 
     return 0;
+}
+
+void sigint_handler(int signum) {
+    printf("\033[33m");
+    printf("\nCtrl-C ignored\n");
+    printf("\033[0m");
+}
+
+void sigquit_handler(int signum) {
+    printf("\033[33m");
+    printf("\nCtrl-\\ ignored\n");
+    printf("\033[0m");
 }
 
 int drag_and_drop(int argc, char *argv[]) {
@@ -200,7 +219,7 @@ void drag_data_received(GtkWidget *widget, GdkDragContext *context,
 }
 
 void progress_bar(char *filename) {
-    const char bar = '=';
+    const char bar = '#';
     const char blank = ' ';
     const int LEN = 50;
     const int MAX = 100;
@@ -212,7 +231,9 @@ void progress_bar(char *filename) {
     float percent;
     
     while (count <= MAX) {
-        printf("\r(%d/%d) %s [", file_cnt, num_sub_files, filename);
+        printf("\r(%d/%d) %s ", file_cnt, num_sub_files, filename);
+        printf("\033[32m");
+        printf("[");
         percent = (float) count / MAX * 100;
         barCount = (int) (percent / tick);
         for (i = 0; i < LEN; i++) {
@@ -221,11 +242,18 @@ void progress_bar(char *filename) {
             else
                 printf("%c", blank);
         }
-        printf("] %.2f%%", percent);
+        printf("] ");
+        printf("\033[0m");
+        printf("%.2f%%", percent);
         fflush(stdout);
         count++;
         usleep(SPEED * 1000);
     }
+    printf("\r(%d/%d) %s [", file_cnt, num_sub_files, filename);
+    for (i = 0; i < LEN; i++) {
+        printf("%c", bar);
+    }
+    printf("] 100.00%%");
 }
 
 void ls_grep_c() {
@@ -278,7 +306,12 @@ void print_similarity() {
         exit(1);
     }
 
-    printf("\n\n----------------------------------RESULT--------------------------------\n");
+    printf("\033[34m");
+    printf("\n\n----------------------------------");
+    printf("\033[36m");
+    printf("RESULT");
+    printf("\033[34m");
+    printf("--------------------------------\n");
     for (int i = 0; i < 2; i++) {
         printf("|");
         for (int j = 0; j < 70; j++) {
@@ -287,6 +320,7 @@ void print_similarity() {
         printf("|\n");
     }
 
+    printf("\033[0m");
     for (int i = 0; i < num_sub_files; i++) {
         char text[100];
         fgets(text, sizeof(text), fp_result);
@@ -336,6 +370,7 @@ void print_similarity() {
         printf("%%");
         printf("\033[0m\n");
     }
+    printf("\033[34m");
     for (int i = 0; i < 2; i++) {
         printf("|");
         for (int j = 0; j < 70; j++) {
@@ -344,4 +379,5 @@ void print_similarity() {
         printf("|\n");
     }
     printf("------------------------------------------------------------------------\n");
+    printf("\033[0m");
 }
