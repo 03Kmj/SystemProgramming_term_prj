@@ -47,9 +47,10 @@ int main(int argc, char *argv[]) {
     
     intro();
 
-    printf("===Here is a list of files you can use===\n");
+    printf("\n======= Here is a list of files you can use =======\n");
     ls_grep_c();
 
+    printf("\n========= Here is a list of dropped files =========\n");
     drag_and_drop(argc, argv);
 
     FILE *fp = fopen("dropped_file.txt", "r");
