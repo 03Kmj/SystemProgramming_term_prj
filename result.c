@@ -7,7 +7,7 @@
 
     for (int i = 0; i < 2; i++) {
         printf("|");
-        for (int j = 0; j < 76; j++) {
+        for (int j = 0; j < 70; j++) {
             printf(" ");
         }
         printf("|\n");
@@ -17,8 +17,8 @@
         printf("| ");
         char buf[100];
         fgets(buf, sizeof(buf), fp_result);
-        int len = (76 - strlen(buf)) / 2;
-        for (int j = 0; j < 76 - len - strlen(buf) - 1; j++) {
+        int len = (70 - strlen(buf)) / 2;
+        for (int j = 0; j < 70 - len - strlen(buf) - 1; j++) {
             printf(" ");
         }
         printf("%s", buf);
@@ -30,7 +30,7 @@
 
     for (int i = 0; i < 2; i++) {
         printf("|");
-        for (int j = 0; j < 76; j++) {
+        for (int j = 0; j < 70; j++) {
             printf(" ");
         }
         printf("|\n");
