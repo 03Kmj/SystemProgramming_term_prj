@@ -9,13 +9,9 @@ void signal_handler(int signum) {
 
 int main() {
     // 모든 시그널을 무시하는 핸들러 등록
-    struct sigaction sa;
-    sa.sa_handler = signal_handler;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
-    for (int i = 1; i <= 31; i++) {
-        sigaction(i, &sa, NULL);
-    }
+    signal(SIGINT, signal_handler);
+    signal(SIGTERM, signal_handler);
+    // 필요한 다른 시그널들도 추가로 등록 가능
 
     // 메인 프로그램 시작
     while (1) {
