@@ -251,7 +251,6 @@ void ls_grep_c() {
 }
 
 void intro() {
-    printf("\n\n-------------------------RESULT-------------------------\n");
     printf("\n\n");
     printf("*Our Program: Similarity check\n");
     printf("*Purpose: This program checks the similarity between c codes.\n");
@@ -278,10 +277,25 @@ void print_similarity() {
         printf("Failed to open file: similarity_result.txt\n");
         exit(1);
     }
+
+    printf("\n\n----------------------------------RESULT--------------------------------\n");
+    for (int i = 0; i < 2; i++) {
+        printf("|");
+        for (int j = 0; j < 70; j++) {
+            printf(" ");
+        }
+        printf("|\n");
+    }
+
     for (int i = 0; i < num_sub_files; i++) {
         char text[100];
         fgets(text, sizeof(text), fp_result);
 
+        int len = (70 - strlen(text)) / 2;
+        for (int j = 0; j < 70 -len - strlen(text) - 1; j++) {
+            printf(" ");
+        }
+        
         const char *keyword = "is";
 
         char *keyword_position = strstr(text, keyword);
@@ -322,4 +336,12 @@ void print_similarity() {
         printf("%%");
         printf("\033[0m\n");
     }
+    for (int i = 0; i < 2; i++) {
+        printf("|");
+        for (int j = 0; j < 70; j++) {
+            printf(" ");
+        }
+        printf("|\n");
+    }
+    printf("------------------------------------------------------------------------\n");
 }
