@@ -11,6 +11,9 @@
 
 char *filenames[MAX_FILENAMES];
 int num_files = 0;
+int file_cnt = 0;
+int main_check = 1;
+int num_sub_files= 0;
 
 // Drag and Drop
 int drag_and_drop(int, char *[]);
@@ -18,23 +21,35 @@ void save_filenames_to_file();
 void start_button_clicked(GtkWidget *, gpointer);
 void drag_data_received(GtkWidget *, GdkDragContext *, int, int, GtkSelectionData *, guint, guint, gpointer);
 
+void progress_bar();
+
 // main
 int main(int argc, char *argv[]) {
     char main_dir[100];
     char sub_dir[100];
-    int main_check = 1;
 
+    // c파일이 있는지 확인 필요
+    // 없으면 프로그램 종료
+    printf("C files you can use are following:\n");
     system("./ls_c");
     sleep(1);
 
+    // c파일인지 확인
     drag_and_drop(argc, argv);
 
     FILE *fp = fopen("dropped_file.txt", "r");
     if (fp == NULL) {
-        printf("Failed to open file for reading.\n");
+        printf("Failed to open file: dropped_file.txt\n");
         exit(1);
     }
 
+    FILE *fp_result = fopen("similarity_result.txt", "w");
+    if (fp_result == NULL) {
+        printf("Failed to open file: similarity_result.txt\n");
+        exit(1);
+    }
+
+    main_check = 1;
     for (int i = 0; i < num_files; i++) {
         char buf[100];
         fscanf(fp, "%s", buf);
@@ -60,12 +75,27 @@ int main(int argc, char *argv[]) {
             fscanf(fp, "%lf", &similarity);
             pclose(fp);
 
-            printf("The similarity between %s and %s is %lf\n", main_dir, sub_dir, similarity);
+            file_cnt++;
+            printf("\n");
+            progress_bar(sub_dir);
+            fprintf(fp_result, "The similarity between %s and %s is %.2lf%%\n", main_dir, sub_dir, similarity);
             sleep(1);
         }
     }
-
     fclose(fp);
+    fclose(fp_result);
+
+    printf("\n\n-------------------------RESULT-------------------------\n");
+    fp_result = fopen("similarity_result.txt", "r");
+    if (fp_result == NULL) {
+        printf("Failed to open file: similarity_result.txt\n");
+        exit(1);
+    }
+    for (int i = 0; i < num_sub_files; i++) {
+        char buf[100];
+        fgets(buf, sizeof(buf), fp_result);
+        printf("%s", buf);
+    }
 
     return 0;
 }
@@ -95,8 +125,8 @@ int drag_and_drop(int argc, char *argv[]) {
     g_signal_connect(start_button, "clicked", G_CALLBACK(start_button_clicked), NULL);
     gtk_box_pack_start(GTK_BOX(main_box), start_button, TRUE, TRUE, 0);
 
-    gtk_drag_dest_set(window, GTK_DEST_DEFAULT_ALL, targets, G_N_ELEMENTS(targets), GDK_ACTION_COPY);
-    g_signal_connect(window, "drag-data-received", G_CALLBACK(drag_data_received), NULL);
+    gtk_drag_dest_set(drop_label, GTK_DEST_DEFAULT_ALL, targets, G_N_ELEMENTS(targets), GDK_ACTION_COPY);
+    g_signal_connect(drop_label, "drag-data-received", G_CALLBACK(drag_data_received), NULL);
 
     gtk_widget_show_all(window);
 
@@ -138,10 +168,45 @@ void drag_data_received(GtkWidget *widget, GdkDragContext *context,
             filenames[num_files] = g_strdup(filename);
             g_object_unref(file);
 
-            g_print("Dropped file: %s\n", filename);
+            if (main_check) {
+                g_print("Main file: %s\n", filename);
+                main_check = 0;
+            }
+            else {
+                g_print("Sub file (%d): %s\n", ++num_sub_files, filename);
+            }
             num_files++;
         }
         g_strfreev(uris);
     }
     gtk_drag_finish(context, TRUE, FALSE, time);
+}
+
+void progress_bar(char *filename) {
+    const char bar = '=';
+    const char blank = ' ';
+    const int LEN = 50;
+    const int MAX = 100;
+    const int SPEED = 10;
+    int count = 0;
+    int i;
+    float tick = (float) MAX / LEN;
+    int barCount;
+    float percent;
+    
+    while (count <= MAX) {
+        printf("\r(%d/%d) %s [", file_cnt, num_sub_files, filename);
+        percent = (float) count / MAX * 100;
+        barCount = (int) (percent / tick);
+        for (i = 0; i < LEN; i++) {
+            if (i < barCount)
+                printf("%c", bar);
+            else
+                printf("%c", blank);
+        }
+        printf("] %.2f%%", percent);
+        fflush(stdout);
+        count++;
+        usleep(SPEED * 1000);
+    }
 }
