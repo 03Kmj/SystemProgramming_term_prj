@@ -58,25 +58,6 @@ int main(int argc, char *argv[]) {
         char buf[100];
         fscanf(fp, "%s", buf);
 
-        FILE *buf_fp = fopen(buf, "r");
-        if (buf_fp == NULL) {
-            printf("\n(%d/%d) ", file_cnt, num_sub_files);
-            printf("\033[1;31mError: ");
-            printf("\033[0m");
-            printf("%s is not in the directory.\n", buf);
-            exit(1);
-        }
-        fclose(buf_fp);
-
-        char *extension = strrchr(buf, '.');
-        if (strcmp(extension, ".c") != 0) {
-            printf("\n(%d/%d) ", file_cnt, num_sub_files);
-            printf("\033[1;31mError: ");
-            printf("\033[0m");
-            printf("%s is not a C file.\n", buf);
-            exit(1);
-        }
-
         if (main_check) {
             strcpy(main_dir, buf);
             main_check = 0;
@@ -187,8 +168,28 @@ void drag_data_received(GtkWidget *widget, GdkDragContext *context,
         for (uri = uris; *uri; uri++) {
             GFile *file = g_file_new_for_uri(*uri);
             char *filename = g_file_get_basename(file);
-            filenames[num_files] = g_strdup(filename);
             g_object_unref(file);
+
+            char *extension = strrchr(filename, '.');
+            if (extension == NULL || strcmp(extension, ".c") != 0) {
+                printf("\033[1;31m");
+                printf("Unsupported Extension: ");
+                printf("\033[0m");
+                printf("%s is not a C file.\n", filename);
+                continue;
+            }
+
+            FILE *fp = fopen(filename, "r");
+            if (fp == NULL) {
+                printf("\033[1;31m");
+                printf("Invalid Directory: ");
+                printf("\033[0m");
+                printf("%s is not in the directory.\n", filename);
+                continue;
+            }
+            fclose(fp);
+
+            filenames[num_files] = g_strdup(filename);
 
             if (main_check) {
                 g_print("Main file: %s\n", filename);
@@ -260,7 +261,7 @@ void intro() {
     printf("*Our Program: Similarity check\n");
     printf("*Purpose: This program checks the similarity between c codes.\n");
     printf("*Writer: mjkang, shpark, hjwi\n");
-    sleep(3);
+    sleep(2);
     printf("\n\n\n");
 
     printf("\033[1;31m     _           _ _            _ _                _               _      \n");  
@@ -272,6 +273,6 @@ void intro() {
     printf("\033[1;35m                                       __/ |                               \n");  
     printf("\033[1;35m                                      |___/                                \n");  
     printf("\033[0m"); 
-    sleep(3);
+    sleep(2);
     printf("\n\n\n");
 }
