@@ -53,9 +53,15 @@ int main(int argc, char *argv[]) {
         char buf[100];
         fscanf(fp, "%s", buf);
 
-        if (buf == NULL) {
-            break;
+        FILE *buf_fp = fopen(buf, "r");
+        if (buf_fp == NULL) {
+            printf("\n(%d/%d) ", file_cnt, num_sub_files);
+            printf("\033[1;31mError: ");
+            printf("\033[0m");
+            printf("%s is not in the directory.\n", buf);
+            exit(1);
         }
+
         if (main_check) {
             strcpy(main_dir, buf);
             main_check = 0;
@@ -76,56 +82,27 @@ int main(int argc, char *argv[]) {
             fscanf(fp, "%lf", &similarity);
             pclose(fp);
 
-            file_cnt++;
             printf("\n");
             progress_bar(sub_dir);
             fprintf(fp_result, "The similarity between %s and %s is %.2lf%%\n", main_dir, sub_dir, similarity);
             sleep(1);
         }
+        file_cnt++;
     }
     fclose(fp);
     fclose(fp_result);
 
-    printf("\n\n -------------------------RESULT-------------------------\n");
+    printf("\n\n-------------------------RESULT-------------------------\n");
     fp_result = fopen("similarity_result.txt", "r");
     if (fp_result == NULL) {
         printf("Failed to open file: similarity_result.txt\n");
         exit(1);
     }
-
-    for (int i = 0; i < 2; i++) {
-        printf("|");
-        for (int j = 0; j < 55; j++) {
-            printf(" ");
-        }
-        printf("|\n");
-    }
-
     for (int i = 0; i < num_sub_files; i++) {
-        printf("| ");
         char buf[100];
         fgets(buf, sizeof(buf), fp_result);
-        int len = (55 - strlen(buf)) / 2;
-        for (int j = 0; j < len; j++) {
-            printf(" ");
-        }
         printf("%s", buf);
-
-        for (int j = 0; j < 55 - len - strlen(buf) - 1; j++) {
-            printf(" ");
-        }
-        printf("|\n");
     }
-
-    for (int i = 0; i < 2; i++) {
-        printf("|");
-        for (int j = 0; j < 55; j++) {
-            printf(" ");
-        }
-        printf("|\n");
-    }
-    
-    printf(" -------------------------------------------------------");
 
     return 0;
 }
@@ -248,7 +225,6 @@ void ls_grep_c() {
         exit(1);
     }
 
-    
     char buffer[1024];
     int c_check = 0;
     while (fgets(buffer, sizeof(buffer), pipe) != NULL) {
