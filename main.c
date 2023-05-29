@@ -31,6 +31,27 @@ void ls_grep_c();
 int main(int argc, char *argv[]) {
     char main_dir[100];
     char sub_dir[100];
+    
+    printf("\n\n");
+    printf("*Our Program: Similarity check\n");
+    printf("*Purpose: This program checks the similarity between c codes.\n");
+    printf("*Writer: mjkang, shpark, hjwi\n");
+    sleep(3);
+    printf("\n\n\n");
+
+    printf("\033[1;31m     _           _ _            _ _                _               _      \n");  
+    printf("\033[1;31m    (_)         (_) |          (_) |              | |             | |     \n");  
+    printf("\033[1;33m ___ _ _ __ ___  _| | __ _ _ __ _| |_ _   _    ___| |__   ___  ___| | __  \n");  
+    printf("\033[1;32m/ __| | '_ ` _ \\| | |/ _` | '__| | __| | | |  / __| '_ \\ / _ \\/ __| |/ /  \n");  
+    printf("\033[1;36m\\__ \\ | | | | | | | | (_| | |  | | |_| |_| | | (__| | | |  __/ (__|   <   \n");  
+    printf("\033[1;34m|___/_|_| |_| |_|_|_|\\__,_|_|  |_|\\__|\\__, |  \\___|_| |_|\\___|\\___|_|\\_\\  \n");  
+    printf("\033[1;35m                                       __/ |                               \n");  
+    printf("\033[1;35m                                      |___/                                \n");  
+    printf("\033[0m"); 
+    sleep(3);
+    printf("\n\n\n");
+
+    printf("===Here is a list of files you can use===\n");
 
     ls_grep_c();
 
