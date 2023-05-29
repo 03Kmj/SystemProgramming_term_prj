@@ -27,7 +27,10 @@ void progress_bar();
 // call ls_c and check if there is enough C files
 void ls_grep_c();
 
+// show intro
 void intro();
+
+// print similarity with colors
 void print_similarity();
 
 // main
@@ -89,7 +92,6 @@ int main(int argc, char *argv[]) {
     fclose(fp);
     fclose(fp_result);
 
-    printf("\n\n-------------------------RESULT-------------------------\n");
     print_similarity();
 
     return 0;
@@ -249,6 +251,7 @@ void ls_grep_c() {
 }
 
 void intro() {
+    printf("\n\n-------------------------RESULT-------------------------\n");
     printf("\n\n");
     printf("*Our Program: Similarity check\n");
     printf("*Purpose: This program checks the similarity between c codes.\n");
