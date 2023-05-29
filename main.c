@@ -21,20 +21,19 @@ void save_filenames_to_file();
 void start_button_clicked(GtkWidget *, gpointer);
 void drag_data_received(GtkWidget *, GdkDragContext *, int, int, GtkSelectionData *, guint, guint, gpointer);
 
+// print progress bar
 void progress_bar();
+
+// call ls_c and check if there is enough C files
+void ls_grep_c();
 
 // main
 int main(int argc, char *argv[]) {
     char main_dir[100];
     char sub_dir[100];
 
-    // c파일이 있는지 확인 필요
-    // 없으면 프로그램 종료
-    printf("C files you can use are following:\n");
-    system("./ls_c");
-    sleep(1);
+    ls_grep_c();
 
-    // c파일인지 확인
     drag_and_drop(argc, argv);
 
     FILE *fp = fopen("dropped_file.txt", "r");
@@ -53,6 +52,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < num_files; i++) {
         char buf[100];
         fscanf(fp, "%s", buf);
+
         if (buf == NULL) {
             break;
         }
@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
 
             char command[200];
             sprintf(command, "python3 ./similarity.py %s %s", main_dir, sub_dir);
+
             FILE *fp = popen(command, "r");
             if (fp == NULL) {
                 printf("Error: cannot open file\n");
@@ -208,5 +209,28 @@ void progress_bar(char *filename) {
         fflush(stdout);
         count++;
         usleep(SPEED * 1000);
+    }
+}
+
+void ls_grep_c() {
+    FILE *pipe = popen("./ls_c", "r");
+    if (pipe == NULL) {
+        perror("popen");
+        exit(1);
+    }
+
+    
+    char buffer[1024];
+    int c_check = 0;
+    while (fgets(buffer, sizeof(buffer), pipe) != NULL) {
+        printf("%s", buffer);
+        c_check++;
+    }
+
+    pclose(pipe);
+
+    if (c_check < 2) {
+        printf("There is no enough C files.\n");
+        exit(1);
     }
 }
