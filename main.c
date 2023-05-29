@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 2; i++) {
         printf("|");
-        for (int j = 0; j < 55; j++) {
+        for (int j = 0; j < 100; j++) {
             printf(" ");
         }
         printf("|\n");
@@ -111,13 +111,13 @@ int main(int argc, char *argv[]) {
         printf("| ");
         char buf[100];
         fgets(buf, sizeof(buf), fp_result);
-        int len = (55 - strlen(buf)) / 2;
+        int len = (100 - strlen(buf)) / 2;
         for (int j = 0; j < len; j++) {
             printf(" ");
         }
         printf("%s", buf);
 
-        for (int j = 0; j < 55 - len - strlen(buf) - 1; j++) {
+        for (int j = 0; j < 100 - len - strlen(buf) - 1; j++) {
             printf(" ");
         }
         printf("|\n");
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 2; i++) {
         printf("|");
-        for (int j = 0; j < 55; j++) {
+        for (int j = 0; j < 100; j++) {
             printf(" ");
         }
         printf("|\n");
