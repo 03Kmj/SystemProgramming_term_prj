@@ -1,4 +1,4 @@
-// execute grep | ls
+// Execute grep | ls
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,18 +14,18 @@ int main() {
     int pid;
     int thepipe[2];
 
-    // create a pipe
+    // Create a pipe
     if (pipe(thepipe) == -1) {
         perror("pipe");
         exit(1);
     }
 
-    // create a child process
+    // Create a child process
     if ((pid = fork()) == -1) {
         perror("fork");
         exit(1);
     }
-    // create a parent process
+    // Create a parent process
     if (pid > 0) {
         close(thepipe[1]);
         dup2(thepipe[0], 0);
