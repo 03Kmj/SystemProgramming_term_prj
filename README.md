@@ -1,13 +1,4 @@
-# readme file
-
-생성 일시: 2023년 5월 31일 오후 5:08
-생성자: 강민정
-최종 편집 일시: 2023년 5월 31일 오후 6:22
-최종 편집자: 강민정
-
 # Similarity Check Program
-
----
 
 <img width="661" alt="Untitled" src="https://github.com/03Kmj/SystemProgramming_term_prj/assets/106760660/4a1f2fc0-5633-4f91-ab0c-a7343d61217c">
 
