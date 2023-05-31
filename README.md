@@ -2,7 +2,7 @@
 
 생성 일시: 2023년 5월 31일 오후 5:08
 생성자: 강민정
-최종 편집 일시: 2023년 5월 31일 오후 6:19
+최종 편집 일시: 2023년 5월 31일 오후 6:22
 최종 편집자: 강민정
 
 # Similarity Check Program
@@ -13,15 +13,11 @@
 
 ## 배포 주소
 
----
-
 > Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
 DemoVideo:
 > 
 
 ## 팀 소개
-
----
 
 > SystemProgramming 003분반 
 경북대학교 컴퓨터학부 강민정(2022116624), 박석현(2020110973), 위혜정(2022116007)
@@ -30,15 +26,11 @@ DemoVideo:
 
 ## 프로젝트 소개
 
----
-
 ### 개요
 
 ‘Similarity Check Program’은 C 파일 간의 유사도를 검사하는 command-line program입니다. main file과 sub file을 비교하여 각 비교에 대한 유사도를 생성합니다. 각 파일에 대한 유사도 검사 진행 상황을 나타내기 위해 progress bar를 사용하며, 결과는 텍스트 파일에 저장합니다.
 
 ## 시작 가이드
-
----
 
 ### 사전 요구사항
 
@@ -70,8 +62,6 @@ DemoVideo:
 
 ## 주요 기능
 
----
-
 - 유사도 검사가 가능한 파일의 목록을 보여줍니다.(검사 가능 조건: 확장자명이 .c 여야하며, 실행할 파일과 같은 디렉토리 내에 위치해야함.)
 - 비교할 파일을 UI에 drag and drop하며, 버튼을 통해 비교를 조작할 수 있습니다.
 - 각 유사도 검사 진행에 대해 progress bar를 표시합니다.
@@ -80,15 +70,13 @@ DemoVideo:
 
 ## Stacks
 
----
-
 ### Environment
 
-<img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
+<img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)"/>
 
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white">
 
-<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
+<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)"/>
 
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white">
 
@@ -100,7 +88,7 @@ DemoVideo:
 
 ### Communication
 
-<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white">
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white"/>
 
 ## 참고
 
