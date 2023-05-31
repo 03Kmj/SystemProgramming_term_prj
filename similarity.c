@@ -405,7 +405,6 @@ void intro() {
     printf("*Purpose: This program checks the similarity between c codes.\n");
     printf("*Writer: mjkang, shpark, hjwi\n");
     sleep(2);
-    printf("\n");
 
     printf("\033[1;31m     _           _ _            _ _                _               _      \n");
     printf("\033[1;31m    (_)         (_) |          (_) |              | |             | |     \n");
@@ -417,7 +416,6 @@ void intro() {
     printf("\033[1;35m                                      |___/                                \n");
     printf("\033[0m");
     sleep(2);
-    printf("\n");
 }
 
 // Print similarity result
