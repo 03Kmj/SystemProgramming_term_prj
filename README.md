@@ -9,7 +9,7 @@
 
 ---
 
-![Untitled](readme%20file%20a82a852a2a2d4e33ac7b26dfd8cf753e/Untitled.png)
+<img width="661" alt="Untitled" src="https://github.com/03Kmj/SystemProgramming_term_prj/assets/106760660/4a1f2fc0-5633-4f91-ab0c-a7343d61217c">
 
 ## 배포 주소
 
