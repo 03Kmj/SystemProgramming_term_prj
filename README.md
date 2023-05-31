@@ -91,7 +91,6 @@
 ## Stacks
 
 ### Environment
-
 <div align="left">
     <img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
     <img src="[https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white)">
@@ -99,12 +98,10 @@
 </div>
 
 ### Development
-
 <div align="left">
     <img src="[https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white)">
     <img src="[https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white)">
 </div>
 
 ### Communication
-
-    <img src="[https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)"/></a>
+<img src="[https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)"/></a>
