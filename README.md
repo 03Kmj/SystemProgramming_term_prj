@@ -44,7 +44,7 @@
 ```
 - gio 라이브러리 설치
 ```c
-    $ sudo apt-get install libglib3.0-dev
+    $ sudo apt-get install libglib2.0-dev
 ```
 - POSIX 스레드 라이브러리 설치
 ```c
