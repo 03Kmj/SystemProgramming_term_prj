@@ -69,13 +69,13 @@
 ./similarity
 ```
 
-1. 파일 추가
+3. 파일 추가
 실행 후 팝업되는 UI 중 “Drop C File here!”에 비교할 main file과 sub file들을 drag&drop 합니다.
-2. 비교 실행
+4. 비교 실행
     
     UI 중 “Start Similarity Check!” 버튼을 클릭하여 유사도 검사를 시작합니다.
     
-3. 검사 결과 확인
+5. 검사 결과 확인
 검사 후 터미널창을 통해 검사 결과를 확인할 수 있습니다. 
 
 
