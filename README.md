@@ -1,36 +1,108 @@
-# Similarity Check Application
+# readme file
 
-## Overview
-Similarity Check is a command-line application that calculates the similarity between C code files. It compares a main file with a set of sub files and generates a similarity score for each comparison. The application uses a progress bar to indicate the progress of each comparison and stores the results in a text file.
+생성 일시: 2023년 5월 31일 오후 5:08
+생성자: 강민정
+최종 편집 일시: 2023년 5월 31일 오후 6:19
+최종 편집자: 강민정
 
-## Features
-- Drag and drop C code files for comparison
-- Display progress bar for each comparison
-- Generate similarity scores and store them in a result file
-- Print colored similarity results
+# Similarity Check Program
 
-## Prerequisites
-- C compiler (gcc or any compatible compiler)
-- GTK library
-- GIO library
+---
 
-## Usage
-1. Compile the source code: gcc test.c -o test `pkg-config —cflags —libs gtk+-3.0`
-2. Execute the application: ./similarity_check
-3. Drag and drop the C code files you want to compare into the application window. The main file will be automatically selected as the first file, and the rest will be treated as sub files.
+![Untitled](readme%20file%20a82a852a2a2d4e33ac7b26dfd8cf753e/Untitled.png)
 
-4. Click the "Start Similarity Check!" button to begin the comparison process.
+## 배포 주소
 
-5. The application will display a progress bar for each sub file, indicating the progress of the comparison.
+---
 
-6. Once the comparison is completed, the similarity scores will be stored in the "similarity_result.txt" file.
+> Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
+DemoVideo:
+> 
 
-7. The application will print the similarity results, highlighting them with different colors based on the similarity score.
+## 팀 소개
 
-## Note
-- The application assumes that the main file and sub files are C code files (.c extension).
-- Ensure that the "ls_c" command is available in the current directory to list available C code files. If not, you can modify the code to use a different mechanism for listing the files.
+---
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+> SystemProgramming 003분반 
+경북대학교 컴퓨터학부 강민정(2022116624), 박석현(2020110973), 위혜정(2022116007)
+개발기간 2023. 05. 01 ~ 2023. 05. 31
+> 
 
+## 프로젝트 소개
+
+---
+
+### 개요
+
+‘Similarity Check Program’은 C 파일 간의 유사도를 검사하는 command-line program입니다. main file과 sub file을 비교하여 각 비교에 대한 유사도를 생성합니다. 각 파일에 대한 유사도 검사 진행 상황을 나타내기 위해 progress bar를 사용하며, 결과는 텍스트 파일에 저장합니다.
+
+## 시작 가이드
+
+---
+
+### 사전 요구사항
+
+- c컴파일러 (gcc) 설치
+- gtk 라이브러리 설치
+- gio 라이브러리 설치
+- POSIX 스레드 라이브러리 설치(스레드 사용한다면~~)
+
+### 사용법
+
+1. 컴파일 및 링크
+    
+    ls_c.c 컴파일 (gcc ls_c.c -o ls_c)
+    pthread 라이브러리 링크 (gcc -o progress_bar progress_bar.c -lpthread)
+    test.c 컴파일 (gcc test.c -o test `pkg-config —cflags —libs gtk+-3.0`)
+    
+2. 코드 실행
+    
+    ./test
+    
+3. 파일 추가
+    
+    비교 대상 파일을 추가한 후 비교할 파일들을 개수 상관없이 Drop C File here! 공간에 추가합니다. 
+    
+4. 비교 실행
+    
+    Start Similarity Check! 버튼을 클릭해 비교를 시작한다.
+    
+
+## 주요 기능
+
+---
+
+- 유사도 검사가 가능한 파일의 목록을 보여줍니다.(검사 가능 조건: 확장자명이 .c 여야하며, 실행할 파일과 같은 디렉토리 내에 위치해야함.)
+- 비교할 파일을 UI에 drag and drop하며, 버튼을 통해 비교를 조작할 수 있습니다.
+- 각 유사도 검사 진행에 대해 progress bar를 표시합니다.
+- 유사도를 생성하고 결과를 결과 파일에 저장합니다.
+- result box와 색상을 사용하여 유사도 결과를 출력합니다.
+
+## Stacks
+
+---
+
+### Environment
+
+<img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
+
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white">
+
+<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
+
+<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white">
+
+### Development
+
+<img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white">
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white">
+
+### Communication
+
+<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white">
+
+## 참고
+
+- main file, sub file 모두 확장자가 .c 임을 가정합니다.
+- 현재 디렉토리에 ls_x
