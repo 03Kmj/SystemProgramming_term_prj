@@ -5,15 +5,15 @@
 ## 배포 주소
 
 > Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
-DemoVideo:
-> 
+> DemoVideo:
+
 
 ## 팀 소개
 
 > SystemProgramming 003분반 
-경북대학교 컴퓨터학부 강민정(2022116624), 박석현(2020110973), 위혜정(2022116007)
-개발기간 2023. 05. 01 ~ 2023. 05. 31
-> 
+> 경북대학교 컴퓨터학부 강민정(2022116624), 박석현(2020110973), 위혜정(2022116007)
+> 개발기간 2023. 05. 01 ~ 2023. 05. 31
+ 
 
 ## 프로젝트 소개
 
