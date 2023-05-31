@@ -342,7 +342,7 @@ void *progress_bar(char *arg) {
     pthread_mutex_unlock(&mutex);
 
     while (count <= MAX) {
-        int line = 16 + dropped_try + num_c_files + c_in_the_dir + thread_id;
+        int line = 16 + dropped_try + c_in_the_dir + thread_id;
 
         pthread_mutex_lock(&mutex);
         printf("\033[%d;0H", line);
