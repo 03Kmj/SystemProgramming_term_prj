@@ -55,10 +55,10 @@
     $ gcc -o progress_bar progress_bar.c -lpthread
     ```
     
-    main.c 컴파일
+    similarity.c 컴파일
     
     ```c
-    $ gcc main.c sic -o similarity pkg-config —cflags —libs gtk+-3.0
+    $ gcc similarity.c sic -o similarity pkg-config —cflags —libs gtk+-3.0
     ```
     
     (similarty.py는 위의 파일들과 같은 디렉토리 내에 있어야하며, 컴파일 할 필요는 없음.)
