@@ -10,6 +10,7 @@
 > DemoVideo:
 > 
 
+
 ## 팀 소개
 
 > SystemProgramming 003분반
@@ -21,11 +22,13 @@
 > 개발기간 2023. 05. 01 ~ 2023. 05. 31
 > 
 
+
 ## 프로젝트 소개
 
 ### 개요
 
 ‘Similarity Check Program’은 C 파일 간의 유사도를 검사하는 command-line program입니다. main file과 sub file을 비교하여 각 비교에 대한 유사도를 생성합니다. 각 파일에 대한 유사도 검사 진행 상황을 나타내기 위해 progress bar를 사용하며, 결과는 텍스트 파일에 저장합니다.
+
 
 ## 시작 가이드
 
@@ -75,6 +78,7 @@
 3. 검사 결과 확인
 검사 후 터미널창을 통해 검사 결과를 확인할 수 있습니다. 
 
+
 ## 주요 기능
 
 - 유사도 검사가 가능한 파일의 목록을 보여줍니다.(검사 가능 조건: 확장자명이 .c 여야하며, 실행할 파일과 같은 디렉토리 내에 위치해야함.)
@@ -83,23 +87,24 @@
 - 유사도를 생성하고 결과를 결과 파일에 저장합니다.
 - result box와 색상을 사용하여 유사도 결과를 출력합니다.
 
+
 ## Stacks
 
 ### Environment
 
 <div align="left">
-<img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
-<img src="[https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white)">
-<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
+    <img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
+    <img src="[https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white)">
+    <img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
 </div>
 
 ### Development
 
 <div align="left">
-<img src="[https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white)">
-<img src="[https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white)">
+    <img src="[https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white)">
+    <img src="[https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white)">
 </div>
 
 ### Communication
 
-<img src="[https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)"/></a>
+    <img src="[https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)"/></a>
