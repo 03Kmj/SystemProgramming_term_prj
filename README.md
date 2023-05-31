@@ -5,15 +5,21 @@
 ## 배포 주소
 
 > Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
-> DemoVideo:
+> 
 
+> DemoVideo:
+> 
 
 ## 팀 소개
 
-> SystemProgramming 003분반 
+> SystemProgramming 003분반
+> 
+
 > 경북대학교 컴퓨터학부 강민정(2022116624), 박석현(2020110973), 위혜정(2022116007)
+> 
+
 > 개발기간 2023. 05. 01 ~ 2023. 05. 31
- 
+> 
 
 ## 프로젝트 소개
 
@@ -34,22 +40,40 @@
 
 1. 컴파일 및 링크
     
-    ls_c.c 컴파일 (gcc ls_c.c -o ls_c)
-    pthread 라이브러리 링크 (gcc -o progress_bar progress_bar.c -lpthread)
-    test.c 컴파일 (gcc test.c -o test `pkg-config —cflags —libs gtk+-3.0`)
+    ls_c.c 컴파일 
+    
+    ```c
+    $ gcc ls_c.c -o ls_c
+    ```
+    
+    pthread 라이브러리 링크
+    
+    ```c
+    $ gcc -o progress_bar progress_bar.c -lpthread
+    ```
+    
+    main.c 컴파일
+    
+    ```c
+    $ gcc main.c sic -o similarity pkg-config —cflags —libs gtk+-3.0
+    ```
+    
+    (similarty.py는 위의 파일들과 같은 디렉토리 내에 있어야하며, 컴파일 할 필요는 없음.)
     
 2. 코드 실행
+
+```c
+./similarity
+```
+
+1. 파일 추가
+실행 후 팝업되는 UI 중 “Drop C File here!”에 비교할 main file과 sub file들을 drag&drop 합니다.
+2. 비교 실행
     
-    ./test
+    UI 중 “Start Similarity Check!” 버튼을 클릭하여 유사도 검사를 시작합니다.
     
-3. 파일 추가
-    
-    비교 대상 파일을 추가한 후 비교할 파일들을 개수 상관없이 Drop C File here! 공간에 추가합니다. 
-    
-4. 비교 실행
-    
-    Start Similarity Check! 버튼을 클릭해 비교를 시작한다.
-    
+3. 검사 결과 확인
+검사 후 터미널창을 통해 검사 결과를 확인할 수 있습니다. 
 
 ## 주요 기능
 
@@ -62,23 +86,20 @@
 ## Stacks
 
 ### Environment
+
 <div align="left">
-    <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
-    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white">
-    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="[https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black](https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)">
+<img src="[https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white)">
+<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
 </div>
 
 ### Development
+
 <div align="left">
-    <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white">
-    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white">
+<img src="[https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white)">
+<img src="[https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white)">
 </div>
 
 ### Communication
-<img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white"/></a>
-                                                                              
 
-## 참고
-
-- main file, sub file 모두 확장자가 .c 임을 가정합니다.
-- 현재 디렉토리에 ls_x
+<img src="[https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)"/></a>
