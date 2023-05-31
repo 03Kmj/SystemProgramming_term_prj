@@ -50,6 +50,7 @@
 ```c
     $ sudo apt-get install libpthread-stubs0-dev
 ```
+- similarity.c, similarity.py, ls_c.c와 비교할 .c 파일들을 같은 디렉토리 내에 위치시켜야 함.
 
 ### 사용법
 
