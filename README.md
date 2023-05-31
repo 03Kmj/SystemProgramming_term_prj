@@ -79,7 +79,7 @@ DemoVideo:
 
 ### Communication
 
-<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white"/>
+<img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white"/></a>
 
 ## 참고
 
