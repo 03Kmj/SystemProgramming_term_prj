@@ -40,7 +40,7 @@
 ```
 - gtk 라이브러리 설치
 ```c
-    $ sudo apt-get install libgt3.0-dev
+    $ sudo apt-get install libgtk-3-dev
 ```
 - gio 라이브러리 설치
 ```c
@@ -55,7 +55,9 @@
 ### 사용법
 
 1. 컴파일 및 링크
+    1-1 makefile을 활용한 컴파일 및 링크
     
+    1-2 개별 컴파일 및 링크
     ls_c.c 컴파일 
     
     ```c
@@ -74,7 +76,7 @@
     $ gcc similarity.c sic -o similarity pkg-config —cflags —libs gtk+-3.0
     ```
     
-    (similarty.py는 위의 파일들과 같은 디렉토리 내에 있어야하며, 컴파일 할 필요는 없음.)
+    (similarty.py는 위의 파일들과 같은 디렉토리 내에 위치해야하며, 컴파일 할 필요는 없음.)
     
 2. 코드 실행
 
