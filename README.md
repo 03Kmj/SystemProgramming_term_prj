@@ -35,9 +35,21 @@
 ### 사전 요구사항
 
 - c컴파일러 (gcc) 설치
+```c
+    $ sudo apt-get install gcc
+```
 - gtk 라이브러리 설치
+```c
+    $ sudo apt-get install libgt3.0-dev
+```
 - gio 라이브러리 설치
+```c
+    $ sudo apt-get install libglib3.0-dev
+```
 - POSIX 스레드 라이브러리 설치
+```c
+    $ sudo apt-get install libpthread-stubs0-dev
+```
 
 ### 사용법
 
