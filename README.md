@@ -7,8 +7,7 @@
 > Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
 > 
 
-> DemoVideo:
-> 
+
 
 
 ## 팀 소개
