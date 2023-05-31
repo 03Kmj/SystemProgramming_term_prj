@@ -62,11 +62,11 @@ DemoVideo:
 ## Stacks
 
 ### Environment
-
-<img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white">
-<img src="[https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)">
-<br>
+<div align=center>
+    <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
+    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white">
+    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+</div>
 
 ### Development
 
