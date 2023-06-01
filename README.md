@@ -7,7 +7,8 @@
 > Github : [https://github.com/03Kmj/SystemProgramming_term_prj](https://github.com/03Kmj/SystemProgramming_term_prj)
 > 
 
-
+> YouTube : https://www.youtube.com/watch?v=tgy5pGEVUsk
+>
 
 
 ## 팀 소개
